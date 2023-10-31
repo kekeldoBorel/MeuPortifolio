@@ -3,7 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -30,11 +34,11 @@ body {
   margin: 0 auto;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.btn_contato button{
+.btn_contato button {
   padding: 10px 40px;
   font-size: 18px;
   font-weight: 600;
@@ -42,19 +46,92 @@ body {
   border: 0;
   border-radius: 30px;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-h2.titulo{
+h2.titulo {
   color: var(--main-color);
   font-size: 38px;
   text-align: center;
 }
 
-h2.titulo span{
+h2.titulo span {
   color: var(--text-color);
 }
 
+button:hover {
+  box-shadow: 0px 0px 30px var(--text-color);
+  transform: scale(1.05);
+}
+
+/* Estilo do menu mobile */
+
+.menu_mobile{
+  background: black;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  width: 0%;
+  overflow: hidden;
+  transition: .9s;
+}
+
+.btn_abrir_menu i{
+  display: none;
+}
+
+.menu_mobile.abrir_menu{
+  width: 70%;
+}
+
+.menu_mobile.abrir_menu ~ .overlay_menu{
+  display: block;
+}
+
+.menu_mobile nav ul{
+  text-align: right;
+  display: grid;
+}
+
+.menu_mobile nav ul li a{
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 8%;
+  display: block;
+}
+
+.menu_mobile nav ul li a:hover{
+  background-color: var(--main-color);
+  color: var(--bg-color);
+}
+
+.menu_mobile .btn_fechar{
+  padding: 20px 5%;
+}
+
+.menu_mobile .btn_fechar i{
+  color: var(--text-color);
+  font-size: 30px;
+}
+
+.btn_abrir_menu i{
+  color: var(--text-color);
+  font-size: 40px;
+}
+
+.overlay_menu{
+  background-color: rgba(0, 0, 0, 0.659);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 888;
+  display: none;
+}
 /* Estilo do Cabeçalho */
 
 header {
@@ -67,118 +144,419 @@ header > .interface {
   justify-content: space-between;
 }
 
-header a{
-    color: var(--main-color);
-    text-decoration: none;
-    display: inline-block;
-    transition: .2s;
+header a {
+  color: var(--main-color);
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
 }
 
-header a:hover{
-    color: var(--text-color);
-    transform: scale(1.05);
+header nav.menu_desktop a:hover {
+  color: var(--text-color);
+  transform: scale(1.05);
 }
 
-header nav ul{
-    list-style-type: none;
+header nav ul {
+  list-style-type: none;
 }
 
-header nav ul li{
-    display: inline-block;
-    padding: 0 40px;
+header nav.menu_desktop ul li {
+  display: inline-block;
+  padding: 0 40px;
 }
 
-.btn_contato button:hover{
-    box-shadow: 0px 0px 30px var(--text-color);
-    transform: scale(1.05);
-}
-
-header img{
-    width: 215px;
+header img {
+  width: 215px;
 }
 
 /* Estilo do Topo do Site */
 
-section.topo_site{
+section.topo_site {
   padding: 40px 4%;
 }
 
-section.topo_site .flex{
+section.topo_site .flex {
   align-items: center;
   justify-content: center;
-  gap: 200px;
+  gap: 90px;
 }
 
-.img_topo_site img{
+.img_topo_site img {
   width: 400px;
 }
 
-.topo_site .txt_topo_site h1{
+.topo_site .txt_topo_site h1 {
   color: var(--main-color);
   font-size: 42px;
   line-height: 40px;
 }
 
-.topo_site .txt_topo_site h1 span{
+.topo_site .txt_topo_site h1 span {
   color: var(--text-color);
 }
 
-.topo_site .txt_topo_site p{
+.topo_site .txt_topo_site p {
   color: var(--main-color);
   margin: 40px 0;
 }
 
-.topo_site .img_topo_site img{
+.topo_site .img_topo_site img {
   position: relative;
   animation: flutuar 2s ease-in-out infinite alternate;
 }
 
 @keyframes flutuar {
-  0%{
+  0% {
     top: 0;
   }
-  100%{
+  100% {
     top: 30px;
   }
 }
 
 /* ESTILO DAS HABILIDADES */
 
-section.habilidades{
-  background: var(--second-bg-color);
+section.habilidades {
+  background: var(--bg-color);
   padding: 40px 4%;
-  
+  box-shadow: 0 0 40px 10px var(--bg-color);
 }
 
-section.habilidades .flex{
-    gap: 60px;
+section.habilidades .flex {
+  gap: 60px;
 }
 
-.habilidades .habilidades_box{
-  
-  color: var(--bg-color);
+.habilidades .habilidades_box {
+  color: var(--second-bg-color);
   padding: 40px;
   border-radius: 20px;
   margin-top: 45px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.habilidades .flex{
+.habilidades .flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.habilidades .habilidades_box:hover{
+.habilidades .habilidades_box:hover {
   transform: scale(1.05);
   box-shadow: 0 0 100px var(--main-color);
 }
 
-.habilidades .habilidades_box i{
+.habilidades .habilidades_box i {
   font-size: 70px;
   color: var(--text-color);
 }
 
-.habilidades .habilidades_box h3{
+.habilidades .habilidades_box h3 {
   font-size: 28px;
   margin: 15px 0;
+}
+
+/* ESTILO SOBRE */
+
+section.sobre {
+  background: var(--second-bg-color);
+  padding: 80px 4%;
+  box-shadow: 0 0 40px 10px var(--main-color);
+}
+
+section.sobre img {
+  width: 450px;
+  border-radius: 10px;
+}
+
+section.sobre .flex {
+  align-items: center;
+  gap: 60px;
+}
+
+.sobre .txt_sobre {
+  color: var(--bg-color);
+}
+
+.sobre .txt_sobre h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.sobre .txt_sobre h2 span {
+  color: var(--text-color);
+  display: block;
+}
+
+.sobre .txt_sobre p {
+  margin: 20px 0;
+  text-align: justify;
+}
+
+.sobre .txt_sobre .social button {
+  width: 50px;
+  height: 50px;
+  border-radius: 60%;
+  border: none;
+  background: var(--text-color);
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 3px;
+  transition: 0.2s;
+}
+
+.sobre .txt_sobre .social button i {
+  color: var(--second-bg-color);
+}
+
+.sobre .txt_sobre .social button:hover {
+  box-shadow: 0px 0px 30px var(--bg-color);
+  transform: scale(1.05);
+}
+
+/* ESTILO DOS PROJETOS */
+
+section.portfolio {
+  background: var(--second-bg-color);
+  padding: 80px 4%;
+  box-shadow: 0 0 40px 10px var(--main-color);
+}
+
+section.portfolio .flex {
+  justify-content: space-around;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.img_port {
+  width: 400px;
+  height: 250px;
+  margin-top: 20px;
+  background-size: cover;
+  background-position: 100% 0%;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.9s;
+}
+
+.img_port:hover {
+  background-position: 100% 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.508);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--second-bg-color);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+/* ESTILO DO RODAPE */
+
+footer {
+  padding: 40px 4%;
+}
+
+footer .flex {
+  justify-content: space-between;
+}
+
+footer .line_footer {
+  padding: 20px 0;
+}
+
+.borda {
+  border-top: 2px solid var(--text-color);
+}
+
+.logo_footer img {
+  width: 200px;
+}
+
+footer .social button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: var(--text-color);
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 3px;
+  transition: 0.2s;
+}
+
+footer .line_footer p i {
+  color: var(--text-color);
+  font-size: 22px;
+}
+
+footer .line_footer p a {
+  color: var(--second-bg-color);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1020px) {
+
+  .btn_abrir_menu i{
+    display: block;
+  }
+  /* cLASSES GERAIS */
+  .flex {
+    flex-direction: column;
+  }
+
+  h2.titulo {
+    font-size: 34px;
+    line-height: 30px;
+  }
+
+  .topo_site .flex {
+    flex-direction: column-reverse;
+  }
+
+  /* CABEÇALHO */
+  .menu_desktop,
+  .btn_contato {
+    display: none;
+  }
+
+  /* Topo do site */
+
+  section.topo_site .flex {
+    gap: 40px;
+  }
+
+  section.topo_site {
+    padding: 20px 8%;
+  }
+
+  .topo_site .txt_topo_site h1 {
+    font-size: 30px;
+  }
+
+  .topo_site .img_topo_site img {
+    width: 80%;
+  }
+
+  section.portfolio .flex {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* habilidades */
+
+  section.habilidades {
+    padding: 40px 8%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn_abrir_menu i{
+    display: block;
+  }
+
+  h2.titulo {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .topo_site .img_topo_site img {
+    width: 300px;
+  }
+
+  section.sobre img {
+    width: 300px;
+  }
+
+  .img_port {
+    width: 300px;
+    height: 200px;
+  }
+  section.portfolio .flex {
+    grid-template-columns: 1fr 1fr;
+  }
+  section.habilidades .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer .flex{
+    flex-direction: column;
+  }
+
+  footer .line_footer{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .btn_abrir_menu i{
+    display: block;
+  }
+
+  .img_port {
+    width: 250px;
+    height: 150px;
+    gap: 10px;
+  }
+
+  .sobre .txt_sobre h2 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .sobre .txt_sobre p {
+    font-size: 14px;
+  }
+
+  .sobre .txt_sobre .social button {
+    width: 35px;
+    height: 35px;
+    border-radius: 40%;
+    font-size: 20px;
+  }
+
+  .habilidades .habilidades_box i {
+    font-size: 50px;
+  }
+  
+  .habilidades .habilidades_box h3 {
+    font-size: 22px;
+  }
+
+  .habilidades .habilidades_box p {
+    font-size: 16px;
+  }
+
+  footer .flex{
+    flex-direction: column;
+  }
+
+  footer .line_footer{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  section.portfolio .flex {
+    grid-template-columns: 1fr;
+  }
+  section.habilidades .flex {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
