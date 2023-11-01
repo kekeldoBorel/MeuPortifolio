@@ -410,6 +410,14 @@ footer .line_footer p a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1200px) {
+  .img_port {
+    width: 320px;
+    height: 200px;
+    gap: 5px;
+  }
+}
+
 @media screen and (max-width: 1020px) {
 
   .btn_abrir_menu i{
@@ -483,8 +491,9 @@ footer .line_footer p a {
   }
 
   .img_port {
-    width: 300px;
+    width: 320px;
     height: 200px;
+    gap: 5px;
   }
   section.portfolio .flex {
     grid-template-columns: 1fr 1fr;
@@ -503,15 +512,31 @@ footer .line_footer p a {
   }
 }
 
+@media screen and (max-width: 695px) {
+  .img_port {
+    width: 250px;
+    
+  }
+}
+
 @media screen and (max-width: 550px) {
+
+  section.portfolio .flex {
+    grid-template-columns: 1fr 1fr;
+  }
+  section.habilidades .flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   .btn_abrir_menu i{
-    display: block;
+    display: flex;
   }
 
   .img_port {
-    width: 250px;
+    width: 200px;
     height: 150px;
-    gap: 10px;
+    gap: 5px;
+    margin: 5px auto;
   }
 
   .sobre .txt_sobre h2 {
@@ -544,6 +569,7 @@ footer .line_footer p a {
 
   footer .flex{
     flex-direction: column;
+    display: flex;
   }
 
   footer .line_footer{
