@@ -326,6 +326,7 @@ section.portfolio .flex {
   margin-top: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 7px;
 }
 
 .img_port {
