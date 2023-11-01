@@ -418,6 +418,14 @@ footer .line_footer p a {
   }
 }
 
+@media screen and (max-width: 1064px) {
+  .img_port {
+    width: 300px;
+    height: 200px;
+    gap: 5px;
+  }
+}
+
 @media screen and (max-width: 1020px) {
 
   .btn_abrir_menu i{
